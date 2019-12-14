@@ -1,0 +1,74 @@
+version: "3.7"
+services:
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.6.1
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      - "discovery.type=single-node"
+      - "cluster.name=personium-cluster"
+      - "network.host=0.0.0.0"
+      - "action.auto_create_index=.watches,.triggered_watches,.watcher-history-*"
+      - "http.cors.enabled=true"
+      - "http.cors.allow-origin=*"
+      - "indices.fielddata.cache.size=80%"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    networks:
+      - backend
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail localhost:9200/_cat/health?h=status | grep green || exit 1"]
+      interval: 30s
+      timeout: 30s
+      retries: 10
+
+  activemq:
+    image: rmohr/activemq:5.15.4
+    ports:
+      - 61616:61616
+      - 8161:8161
+    networks:
+      - mq
+    healthcheck:
+      test: ["CMD-SHELL", "curl --silent --fail localhost:8161 || exit 1"]
+      interval: 30s
+      timeout: 30s
+      retries: 10
+
+  personium:
+    build: personium
+    ports:
+      - 8080:8080
+    networks:
+      - frontend
+      - mq
+      - backend
+    depends_on:
+      - elasticsearch
+      - activemq
+    healthcheck:
+      test: ["CMD-SHELL", "curl --silent --fail localhost:8080/personium-core || exit 1"]
+      interval: 30s
+      timeout: 30s
+      retries: 10
+
+  nginx:
+    build: nginx
+    ports:
+      - 443:443
+      - 80:80
+    networks:
+      - frontend
+    depends_on:
+      - personium
+
+volumes:
+  esdata:
+    driver: local
+
+networks:
+  frontend:
+  mq:
+  backend:
