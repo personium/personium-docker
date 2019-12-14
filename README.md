@@ -16,7 +16,7 @@ The following are installed.
 # docker-compose up
 ```
 
-## Start/Stop
+### Start/Stop
 
 ```console
 # docker-compose start
