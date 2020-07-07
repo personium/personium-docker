@@ -43,4 +43,4 @@ Default configurations are as follows.
 * `unitScheme=http`
 * `pathBasedCellUrl.enabled=true`
 
-So a cell URL is `http://localhost/alice`, not `https://alice.localhost`.
+So a cell URL is `http://localhost/alice/`, not `https://alice.localhost/`.
