@@ -1,7 +1,7 @@
 FROM tomcat:9-jdk8-adoptopenjdk-hotspot
 
-ENV CORE_VER=1.7.20
-ENV ENGINE_VER=1.5.25
+ENV CORE_VER=1.7.21
+ENV ENGINE_VER=1.5.27
 ENV PERSONIUM_REPO=https://personium.io/mvnrepo/
 
 ENV CORE_URL=${PERSONIUM_REPO}io/personium/personium-core/${CORE_VER}/personium-core-${CORE_VER}.war
