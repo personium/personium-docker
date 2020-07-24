@@ -7,7 +7,7 @@ The followings must be installed and configured in advance to build and run Pers
 * [Docker](https://docs.docker.com/get-docker/)
 * [Docker Compose](https://docs.docker.com/compose/install/)
 
-### Windows 10 User  
+##### Windows 10 User  
 Special requirements if you want to run Docker in Windows 10. Follow the [official instructions from Microsoft](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to install WSL 2.  
 > I highly recommend to check out [A Linux Dev Environment on Windows with WSL 2, Docker Desktop and More](https://nickjanetakis.com/blog/a-linux-dev-environment-on-windows-with-wsl-2-docker-desktop-and-more) before you start installing anything.  
 
@@ -33,11 +33,18 @@ $ ./init.sh
 ```
 
 After execution, a file named `unitadmin_account` will be created.
-The file contains login information to the admin Cell.
+The file contains login information for the admin Cell.
 
 To use management tool, see [here](https://personium.io/docs/en/next/getting-started/appdev-management-tool/).
 
-#### Windows 10 User  
+> Default configurations are as follows.  
+>
+> * `unitScheme=http`
+> * `pathBasedCellUrl.enabled=true`
+>
+> So a cell URL is `http://localhost/alice/`, not `https://alice.localhost/`.
+
+##### Windows 10 User  
 Extra softwares are required to execute the above command successfully in Windows 10. However, you can execute the following commands directly in Windows Terminal or Command Prompt.  
 
 1. Docker command to copy local file to container's folder.  
@@ -64,15 +71,6 @@ Extra softwares are required to execute the above command successfully in Window
         -rw-r--r-- 1 root root  111 Jul 23 15:19 unitadmin_account  
         root@7aeb90f09ec5:~# cat unitadmin_account  
 
-
-#### Note
-
-Default configurations are as follows.
-
-* `unitScheme=http`
-* `pathBasedCellUrl.enabled=true`
-
-So a cell URL is `http://localhost/alice/`, not `https://alice.localhost/`.
 
 ## Start/Stop your services  
 The following commands are useful for starting or stopping the built servcies.
