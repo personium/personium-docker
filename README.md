@@ -2,10 +2,16 @@
 
 ## Requirements
 
-The following are installed.
+The followings must be installed and configured in advance to build and run Personium Unit offered from this repository.
 
 * docker
 * docker-compose
+
+### Windows 10 User  
+Special requirements if you want to run docker in Windows 10. Follow the [official instructions from Microsoft](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to install WSL 2.  
+> I highly recommend to check out [A Linux Dev Environment on Windows with WSL 2, Docker Desktop and More](https://nickjanetakis.com/blog/a-linux-dev-environment-on-windows-with-wsl-2-docker-desktop-and-more) before you start installing anything.  
+
+> Another useful tutorial on [Using Docker in Windows for WSL2](https://code.visualstudio.com/blogs/2020/03/02/docker-in-wsl2).  
 
 ## Usage
 
