@@ -81,7 +81,7 @@ The following commands are useful for starting or stopping the built servcies.
 # docker-compose stop
 ```
 
-## Clean up environment  
+## Clean up and rebuild environment  
 Execute the following docker commands to clean up your local environment for a fresh start.  
 
 ### Step 1. Check current status  
@@ -92,8 +92,7 @@ Execute the following docker commands to clean up your local environment for a f
 
 ### Step 2. Remove containers
 ```cmd  
-# docker-compose stop
-# docker-compose rm -v
+# docker-compose rm -v -s
 # docker-compose ps
 # docker-compose ps -a
 ```  
@@ -105,4 +104,10 @@ DRIVER              VOLUME NAME
 local               personium-docker_esdata
 
 # docker volume rm personium-docker_esdata
+```
+
+### Step 4. Rebuild without cache  
+```console
+# docker-compose build --no-cache
+# docker-compose up -d
 ```
