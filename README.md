@@ -97,7 +97,7 @@ Execute the following docker commands to clean up your local environment for a f
 # docker-compose ps -a
 ```  
 
-### Step 3. Remove voluem  
+### Step 3. Remove volume  
 ```cmd
 # docker volume ls
 DRIVER              VOLUME NAME
