@@ -2,7 +2,7 @@
 
 Personium [architecture](https://personium.io/docs/en/introduction/001_Personium_Architecture/) has three-layered objects. We highly recommend reading the architecture to conceptually understand various component namings and responsibilities.
 
-This repository builds a container image and runs a Personium Unit container with Docker. A Personium Unit is operated by a [Unit Manager](https://github.com/personium/app-uc-unit-manager). If you would like to develop or test a Personium Unit without running a Unit Manager, please reach out to us in [Slack community](https://personium-io.slack.com/) to populate a Unit Manager test account.
+This repository builds a container image and runs a Personium Unit container with Docker. A Personium Unit can be managed by a [Unit Manager](https://github.com/personium/app-uc-unit-manager). If you would like to develop or test a Personium Unit without building one, please reach out to us in [Slack community](https://bit.ly/Join_Personium_Slack) so that we can create demo accounts (Cells) for you.
 
 ## Requirements
 
