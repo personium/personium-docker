@@ -9,9 +9,10 @@ The followings must be installed and configured in advance to build and run Pers
 
 ##### Windows 10 User  
 Special requirements if you want to run Docker in Windows 10. Follow the [official instructions from Microsoft](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to install WSL 2.  
-> I highly recommend to check out [A Linux Dev Environment on Windows with WSL 2, Docker Desktop and More](https://nickjanetakis.com/blog/a-linux-dev-environment-on-windows-with-wsl-2-docker-desktop-and-more) before you start installing anything.  
-
-> Another useful tutorial on [Using Docker in Windows for WSL2](https://code.visualstudio.com/blogs/2020/03/02/docker-in-wsl2).  
+> Useful tutorials to go through before you start installing anything:  
+>
+> - [A Linux Dev Environment on Windows with WSL 2, Docker Desktop and More](https://nickjanetakis.com/blog/a-linux-dev-environment-on-windows-with-wsl-2-docker-desktop-and-more)   
+> - [Using Docker in Windows for WSL2](https://code.visualstudio.com/blogs/2020/03/02/docker-in-wsl2)  
 
 ## Setup  
 Please refer to the [Overview of docker-compose CLI](https://docs.docker.com/compose/reference/overview/) for details.  
@@ -80,7 +81,7 @@ The following commands are useful for starting or stopping the built servcies.
 # docker-compose stop
 ```
 
-## Clean up environment  
+## Clean up and rebuild environment  
 Execute the following docker commands to clean up your local environment for a fresh start.  
 
 ### Step 1. Check current status  
@@ -91,8 +92,7 @@ Execute the following docker commands to clean up your local environment for a f
 
 ### Step 2. Remove containers
 ```cmd  
-# docker-compose stop
-# docker-compose rm -v
+# docker-compose rm -v -s
 # docker-compose ps
 # docker-compose ps -a
 ```  
@@ -104,4 +104,10 @@ DRIVER              VOLUME NAME
 local               personium-docker_esdata
 
 # docker volume rm personium-docker_esdata
+```
+
+### Step 4. Rebuild without cache  
+```console
+# docker-compose build --no-cache
+# docker-compose up -d
 ```
