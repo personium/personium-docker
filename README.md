@@ -1,4 +1,8 @@
-# Development Docker deployment for Personium
+# Personium Unit - Docker Container
+
+Personium [architecture](https://personium.io/docs/en/introduction/001_Personium_Architecture/) has three-layered objects. We highly recommend reading the architecture to conceptually understand various component namings and responsibilities.
+
+This repository builds a container image and runs a Personium Unit container with Docker. A Personium Unit can be managed by a [Unit Manager](https://github.com/personium/app-uc-unit-manager). If you would like to develop or test a Personium Unit without building one, please reach out to us in [Slack community](https://bit.ly/Join_Personium_Slack) so that we can create demo accounts (Cells) for you.
 
 ## Requirements
 
