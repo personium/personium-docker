@@ -113,4 +113,4 @@ check_response 204 "Link unitadmin - CellContentsAdmin"
 # Upon confirming the password without trouble, drop the created information into a file
 echo "unitadmin_cell_url=${CELL_URL}" > ${UNITADMIN_ACCOUNT_FILE}
 echo "unitadmin_account=${UU_NAME}" >> ${UNITADMIN_ACCOUNT_FILE}
-echo "unitudmin_password=${UU_PASS}" >> ${UNITADMIN_ACCOUNT_FILE}
+echo "unitadmin_password=${UU_PASS}" >> ${UNITADMIN_ACCOUNT_FILE}
