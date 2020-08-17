@@ -76,6 +76,21 @@ Extra softwares are required to execute the above command successfully in Window
         -rw-r--r-- 1 root root  111 Jul 23 15:19 unitadmin_account  
         root@7aeb90f09ec5:~# cat unitadmin_account  
 
+### Step 3. Create Cell  
+To create cell, see [Cell creation tutorial](https://personium.io/docs/en/unit-administrator/tutorial/).
+
+Or execute the following script which does the equivalent of doing the above steps.
+
+```cmd
+$ ./create_cell.sh <cell_name>
+```
+
+> Before executing create_cell.sh, `jq` command installation is required.
+
+In the created cell, the following account with root priviledge is also created.
+
+* username: me
+* password: changeme
 
 ## Start/Stop your services  
 The following commands are useful for starting or stopping the built servcies.
