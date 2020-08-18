@@ -1,4 +1,4 @@
-#!/bin/sh -x
+#!/bin/bash -x
 #
 # personium
 # Copyright 2014-2018 FUJITSU LIMITED
