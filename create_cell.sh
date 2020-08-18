@@ -41,7 +41,7 @@ function check_error () {
 }
 
 ### Get unit admin token
-TOKEN=$(curl -f -X POST \
+TOKEN=$(curl -f -s -X POST \
   -H "Accept:application/json" \
   -H "content-type:application/x-www-form-urlencoded" \
   -d "grant_type=password" \
@@ -52,15 +52,15 @@ TOKEN=$(curl -f -X POST \
 check_error $? 'Get unit admin token failed.'
 
 ### Create cell
-curl -f -X POST \
+curl -i -f -X POST \
   -H "Authorization:Bearer ${TOKEN}" \
   -H "Accept:application/json" \
   -d '{"Name": "'${CELL_NAME}'"}' \
-  "${ROOT_URL}__ctl/Cell"
+  "${ROOT_URL}__ctl/Cell" >/dev/null
 check_error $? 'Create cell failed.'
 
 ### Upload snapshot
-curl -f -X PUT \
+curl -i -f -X PUT \
   -H "Content-Type:application/x-zip-compressed" \
   -H "Accept:application/json" \
   -H "Authorization:Bearer ${TOKEN}" \
@@ -69,7 +69,7 @@ curl -f -X PUT \
 check_error $? 'Upload snapshot failed.'
 
 ### 4. Import snapshot
-curl -f -X POST \
+curl -i -f -X POST \
   -H "Accept:application/json" \
   -H "Authorization:Bearer ${TOKEN}" \
   -d '{"Name": "template"}' \
