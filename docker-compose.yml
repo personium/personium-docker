@@ -2,7 +2,7 @@ version: "3.7"
 services:
 
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:6.8.12
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.10
     ports:
       - 9200:9200
       - 9300:9300
@@ -25,7 +25,7 @@ services:
       retries: 10
 
   activemq:
-    image: rmohr/activemq:5.15.9
+    image: islandora/activemq:main
     ports:
       - 61616:61616
       - 8161:8161
